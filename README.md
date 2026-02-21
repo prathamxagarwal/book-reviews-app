@@ -77,7 +77,7 @@ CREATE TABLE books (
 
 ### 1️⃣ Clone the Repository
 
-git clone https://github.com/YOUR_USERNAME/book-review-platform.git
+git clone https://github.com/prathamxagarwal/book-review-platform.git
 cd book-review-platform
 
 ---
@@ -158,7 +158,7 @@ ISBN values are sanitized before being stored to ensure valid API requests.
 ## 👤 Author
 
 Your Name  
-GitHub: https://github.com/YOUR_USERNAME  
+GitHub: https://github.com/prathamxagarwal 
 
 ---
 
