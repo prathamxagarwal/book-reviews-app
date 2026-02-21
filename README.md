@@ -1,4 +1,4 @@
-# 📚 Book Review Platform
+# 📚 Book Review App
 
 A full-stack web application for managing personal book reviews with dynamic cover integration. This project demonstrates backend architecture, database design, RESTful routing, API integration, and modern UI styling.
 
