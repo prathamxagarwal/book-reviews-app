@@ -157,7 +157,7 @@ ISBN values are sanitized before being stored to ensure valid API requests.
 
 ## 👤 Author
 
-Your Name  
+Pratham Agarwal  
 GitHub: https://github.com/prathamxagarwal 
 
 ---
