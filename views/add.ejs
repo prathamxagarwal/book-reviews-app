@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Book</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Add New Book</h1>
+
+    <div class="form-card">
+
+        <form action="/add" method="POST">
+
+            <label>Title</label>
+            <input type="text" name="title" required>
+
+            <label>Author</label>
+            <input type="text" name="author">
+
+            <label>Rating (1-5)</label>
+            <input type="number" name="rating" min="1" max="5">
+
+            <label>ISBN</label>
+            <input type="text" name="isbn">
+
+            <label>Date Read</label>
+            <input type="date" name="date_read">
+
+            <label>Notes</label>
+            <textarea name="notes"></textarea>
+
+            <div class="form-actions">
+                <button type="submit" class="primary-btn">Add Book</button>
+                <a href="/" class="secondary-btn">Cancel</a>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

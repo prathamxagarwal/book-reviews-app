@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Book Reviews</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>My Book Reviews</h1>
+
+    <div class="top-bar">
+        <a class="add-btn" href="/add">+ Add Book</a>
+
+        <div class="sort-links">
+            <strong>Sort:</strong>
+            <a href="/?sort=recency">Newest</a>
+            <a href="/?sort=rating">Rating</a>
+            <a href="/?sort=title">Title</a>
+        </div>
+    </div>
+
+    <% if (books.length === 0) { %>
+        <p class="empty">No books added yet.</p>
+    <% } %>
+
+    <% books.forEach(book => { %>
+
+        <div class="book-card">
+
+            <div class="cover">
+                <% if (book.isbn) { %>
+                    <img src="https://covers.openlibrary.org/b/isbn/<%= book.isbn %>-L.jpg" alt="Book Cover">
+                <% } else { %>
+                    <div class="no-cover">No Cover</div>
+                <% } %>
+            </div>
+
+            <div class="book-details">
+
+                <h2><%= book.title %></h2>
+
+                <p><strong>Author:</strong> <%= book.author || "Unknown" %></p>
+
+                <% if (book.rating) { %>
+                    <p>
+                        <strong>Rating:</strong>
+                        <% for (let i = 0; i < book.rating; i++) { %>
+                            ⭐
+                        <% } %>
+                        (<%= book.rating %>/5)
+                    </p>
+                <% } %>
+
+                <% if (book.date_read) { %>
+                    <p>
+                        <strong>Date Read:</strong>
+                        <%= new Date(book.date_read).toDateString() %>
+                    </p>
+                <% } %>
+
+                <% if (book.notes) { %>
+                    <p class="notes"><%= book.notes %></p>
+                <% } %>
+
+                <div class="actions">
+                    <a href="/edit/<%= book.id %>">Edit</a>
+
+                    <form action="/delete/<%= book.id %>" method="POST">
+                        <button type="submit">Delete</button>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+    <% }) %>
+
+</div>
+
+</body>
+</html>
